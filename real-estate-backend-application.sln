@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realEstateApplication", "realEstateApplication.csproj", "{AFD15993-E3F4-41DE-866E-AFBEAFB07182}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Entities", "RealEstate.Entities\RealEstate.Entities.csproj", "{AFD15993-E3F4-41DE-866E-AFBEAFB07182}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Dal", "RealEstate.Dal\RealEstate.Dal.csproj", "{30AEC2D8-A9CB-4A4C-8130-D0C4A2B301EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
