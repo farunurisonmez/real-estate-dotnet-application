@@ -18,7 +18,7 @@ namespace RealEstate.Entities.Models {
             Status = DataStatus.Inserted;
         }
         
-        public int İd { get; set; }
+        public int Id { get; set; }
         public DateTime CreatedDate { get; set; } // Oluşturulma tarihi
         public DateTime? ModifiedDate { get; set; } // Güncellenme tarihi (nullable)
         public DateTime? DeletedDate { get; set; } // Silinme tarihi (nullable)
