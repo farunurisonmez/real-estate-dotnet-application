@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,5 @@ namespace RealEstate.Entities.Models
 
         //Relational Properties
         public virtual List<Advert> Adverts { get; set; }
-
-
     }
 }

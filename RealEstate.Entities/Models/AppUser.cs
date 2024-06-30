@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using RealEstate.Entities.Enums;
 using RealEstate.Entities.Interfaces;
 using System;
