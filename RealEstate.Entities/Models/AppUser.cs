@@ -7,21 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealEstate.Entities.Models {
-    public class AppUser : IdentityUser<int>, IEntity {
-        public AppUser() {
+namespace RealEstate.Entities.Models
+{
+    public class AppUser : IdentityUser<int>, IEntity
+    {
+        public AppUser()
+        {
             CreatedDate = DateTime.Now;
             Status = DataStatus.Inserted;
         }
-        
-        public int İd { get; set; }
+        public int ID { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public DateTime? DeletedDate { get; set; }
         public DataStatus Status { get; set; }
 
-        // Relational Properties
-        
+        //Relational Properties
         public virtual AppUserProfile Profile { get; set; }
     }
 }

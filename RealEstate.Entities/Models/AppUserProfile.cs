@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealEstate.Entities.Models {
-    public class AppUserProfile : BaseEntity {
+namespace RealEstate.Entities.Models
+{
+    public class AppUserProfile : BaseEntity
+    {
         public string FirstName { get; set; }
-        public string LastName { get; set; }  
+        public string LastName { get; set; }
 
-        // Relational Properties
+        //Relational Properties
         public virtual AppUser AppUser { get; set; }
+
     }
 }

@@ -1,9 +1,15 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.002.0
+VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realEstateApplication", "realEstateApplication.csproj", "{AFD15993-E3F4-41DE-866E-AFBEAFB07182}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Entities", "RealEstate.Entities\RealEstate.Entities.csproj", "{8918F020-296C-4581-8B0A-AA93FF6FCC74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Dal", "RealEstate.Dal\RealEstate.Dal.csproj", "{30AEC2D8-A9CB-4A4C-8130-D0C4A2B301EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Bll", "RealEstate.Bll\RealEstate.Bll.csproj", "{7D356D37-2D8B-4EA9-B77F-FF86364272D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstate.WebAPI", "RealEstate.WebAPI\RealEstate.WebAPI.csproj", "{033334F0-0AC4-42F7-AC34-EA04C3E1244C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +17,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AFD15993-E3F4-41DE-866E-AFBEAFB07182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFD15993-E3F4-41DE-866E-AFBEAFB07182}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFD15993-E3F4-41DE-866E-AFBEAFB07182}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFD15993-E3F4-41DE-866E-AFBEAFB07182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8918F020-296C-4581-8B0A-AA93FF6FCC74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8918F020-296C-4581-8B0A-AA93FF6FCC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {020A6529-AC86-43E9-A0B2-A97C67205E0F}
+		SolutionGuid = {9D9FB4D5-A0A3-42F2-A936-AA38C99A243A}
 	EndGlobalSection
 EndGlobal

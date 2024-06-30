@@ -8,9 +8,10 @@ namespace RealEstate.Entities.Models
 {
     public class Category : BaseEntity
     {
-        public int CategoryID { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
 
-        public virtual List<Product> Products { get; set; }
+        //Relational Properties
+        public virtual List<Advert> Adverts { get; set; }
     }
 }
