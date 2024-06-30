@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using RealEstate.Entities.Interfaces;
 
-namespace RealEstate.BLL.ManagerServices.Abstract
+namespace RealEstate.Bll.ManagerServices.Abstracts
 {
      public interface IManager<T> where T:class, IEntity{
          //Raporlama işlemleri ve değişiklik işlemleri için kullanılacak metotlar

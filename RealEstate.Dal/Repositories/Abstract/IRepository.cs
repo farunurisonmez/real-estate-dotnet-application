@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using RealEstate.Entities.Interfaces;
 
-namespace RealEstate.Dal.Repositories.Abstract
+namespace RealEstate.Dal.Repositories.Abstracts
 {
     //T bir class olmalı ve IEntity'den türemeli
 

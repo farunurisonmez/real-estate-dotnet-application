@@ -28,7 +28,7 @@ Bu katman, uygulamadaki veri modellerini ve bu modellere ait yapılandırmaları
 
 Veri Erişim Katmanı, veritabanı ile etkileşim kuran katmandır. Bu katman, veri erişimi için gerekli tüm işlemleri gerçekleştirir. Configurations klasörü, varlıkların yapılandırmalarını içerir. Örneğin, AppUserConfiguration ve ProductConfiguration gibi sınıflar, Entity Framework Core kullanılarak veritabanı tablolarını yapılandırmak için kullanılır. Bu katman, Repository Pattern kullanılarak veri erişim kodlarını soyutlar ve merkezileştirir. Bu sayede veri erişim işlemleri daha modüler ve yönetilebilir hale gelir.
 
-**Abstract** ve **Concretes** klasörleri, repository (depo) yapısını oluşturmak için kullanıldı. Bu yapı, esnek ve genişletilebilir bir mimari sağlamaktadır. Bu klasörler altında aşağıdaki dosyaları oluşturdum:
+**Abstracts** ve **Concretes** klasörleri, repository (depo) yapısını oluşturmak için kullanıldı. Bu yapı, esnek ve genişletilebilir bir mimari sağlamaktadır. Bu klasörler altında aşağıdaki dosyaları oluşturdum:
 
 
 Repository Pattern, veritabanı işlemlerini soyutlamak ve kod tabanını düzenlemek için kullanılan bir tasarım desenidir. Bu desen, veri erişim kodlarını genel olarak merkezleştirir ve veritabanı işlemlerini doğrudan diğer katmanlara karşı gizler. Böylece kodun daha sürdürülebilir, okunabilir ve test edilebilir olması sağlanır. Repository Pattern, veri erişim katmanını iş akış katmanından ayırarak kodun modülerliğini ve esnekliğini artırır.

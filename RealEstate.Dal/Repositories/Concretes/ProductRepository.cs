@@ -1,5 +1,5 @@
 using RealEstate.Dal.Context;
-using RealEstate.Dal.Repositories.Abstract;
+using RealEstate.Dal.Repositories.Abstracts;
 using RealEstate.Entities.Models;
 
 namespace RealEstate.Dal.Repositories.Concretes {
@@ -10,7 +10,7 @@ namespace RealEstate.Dal.Repositories.Concretes {
     public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
       //Constructor metodu ile DbContext tipinde bir parametre alır ve bu parametreyi BaseRepository sınıfının constructor metoduna gönderir.
-      public ProductRepository(DbContext context) : base(context)
+      public ProductRepository(CustomDbContext context) : base(context)
       {
 
       }

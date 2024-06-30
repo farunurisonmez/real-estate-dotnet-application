@@ -1,8 +1,8 @@
-using RealEstate.BLL.ManagerServices.Abstract;
-using RealEstate.Dal.Repositories.Abstract;
+using RealEstate.Bll.ManagerServices.Abstracts;
+using RealEstate.Dal.Repositories.Abstracts;
 using RealEstate.Entities.Models;
 
-namespace RealEstate.BLL.ManagerServices.Concretes
+namespace RealEstate.Bll.ManagerServices.Concretes
 {
     public class AppUserManager:BaseManager<AppUser>, IAppUserManager{
         IAppUserRepository _repository;

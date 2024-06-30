@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using RealEstate.Dal.Context;
-using RealEstate.Dal.Repositories.Abstract;
+using RealEstate.Dal.Repositories.Abstracts;
 using RealEstate.Entities.Models;
 
 namespace RealEstate.Dal.Repositories.Concretes {
@@ -13,7 +13,7 @@ namespace RealEstate.Dal.Repositories.Concretes {
       UserManager<AppUser> _userManager;
 
       //Constructor metodu ile DbContext tipinde bir parametre alır ve bu parametreyi BaseRepository sınıfının constructor metoduna gönderir.
-      public AppUserRepository(DbContext context, UserManager<AppUser> userManager) : base(context)
+      public AppUserRepository(CustomDbContext context, UserManager<AppUser> userManager) : base(context)
       {
         _userManager = userManager;
       }

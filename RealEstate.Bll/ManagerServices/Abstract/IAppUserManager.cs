@@ -1,6 +1,6 @@
 using RealEstate.Entities.Models;
 
-namespace RealEstate.BLL.ManagerServices.Abstract
+namespace RealEstate.Bll.ManagerServices.Abstracts
 {
     public interface IAppUserManager : IManager<AppUser>
     {

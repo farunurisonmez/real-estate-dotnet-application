@@ -1,9 +1,9 @@
 using System.Linq.Expressions;
-using RealEstate.BLL.ManagerServices.Abstract;
-using RealEstate.Dal.Repositories.Abstract;
+using RealEstate.Bll.ManagerServices.Abstracts;
+using RealEstate.Dal.Repositories.Abstracts;
 using RealEstate.Entities.Interfaces;
 
-namespace RealEstate.BLL.ManagerServices.Concretes {
+namespace RealEstate.Bll.ManagerServices.Concretes {
     public class BaseManager<T> : IManager<T> where T : class, IEntity {
 
         protected IRepository<T> _repository;

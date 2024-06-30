@@ -14,13 +14,13 @@ namespace RealEstate.Dal.Context {
     * Bu nedenle IdentityDbContext sınıfını kullanabilmek için RealEstate.Entities katmanına referans verilmiş olmalıdır.
     * IdentityDbContext sınıfından kalıtım alarak Identity tablolarını kullanmamızı sağlar.
     **/
-    public class DbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>{
+    public class CustomDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>{
         //IdentityRole sınıfı normalde string türünde bir anahtar alırken, 
         //AppUser sınıfı int türünde bir anahtar alır.
         //Bu nedenle IdentityRole<int> şeklinde tanımlama yapılır.
 
         //DbContextOptions EntityFramework Core tarafından sağlanan bir sınıftır.
-        public DbContext(DbContextOptions<DbContext> opt) : base(opt){
+        public CustomDbContext(DbContextOptions<DbContext> opt) : base(opt){
 
         }
 

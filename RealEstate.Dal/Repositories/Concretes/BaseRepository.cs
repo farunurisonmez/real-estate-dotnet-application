@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using RealEstate.Dal.Repositories.Abstract;
+using RealEstate.Dal.Context;
+using RealEstate.Dal.Repositories.Abstracts;
 using RealEstate.Entities.Interfaces;
 
 namespace RealEstate.Dal.Repositories.Concretes {
@@ -9,10 +10,10 @@ namespace RealEstate.Dal.Repositories.Concretes {
     // T tipinde bir generic yapı oluşturduk ve bu yapı IEntity interface'inden kalıtım almalıdır.
     public class BaseRepository<T> : IRepository<T> where T : class, IEntity
     {
-        DbContext _dbContext;
+        CustomDbContext _dbContext;
 
         //Constructor metodu ile DbContext tipinde bir parametre alır ve bu parametreyi _context değişkenine atar.
-        public BaseRepository(DbContext context)
+        public BaseRepository(CustomDbContext context)
         {
             _dbContext = context;
         }
