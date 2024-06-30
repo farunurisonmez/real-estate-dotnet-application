@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RealEstate.Entities.Models;
 
@@ -9,5 +10,15 @@ namespace RealEstate.Dal.Configurations {
             .WithOne(x=>x.Product)
             .HasForeignKey(x => x.Product.ProductID).IsRequired();
         }
+
+        public DbSet<AppUser> AppUsers { get; set; }
+
+        public DbSet<AppUserProfile> AppUserProfiles { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductDetail> ProductDetails { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using RealEstate.Entities.Models;
 using RealEstate.Dal.Configurations;
 
 namespace RealEstate.Dal.Config {
-    public class CategoryConfiguration:BaseConfig<Category>{
+    public class CategoryConfig:BaseConfig<Category>{
         public override void Configure(EntityTypeBuilder<Category> builder){
             base.Configure(builder);
             //Bir kategorinin birden fazla ürünü olabilir.

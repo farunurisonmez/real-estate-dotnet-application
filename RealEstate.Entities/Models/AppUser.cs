@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate.Entities.Models {
 
-    // Uygulama kullanıcısı sınıfı, IdentityUser sınıfından türetilir ve IEntity arayüzünü uygular
+    // Uygulama kullanıcısı sınıfı, IdentityUser sınıfından miras alır ve IEntity arayüzünü uygular
     public class AppUser : IdentityUser<int>, IEntity {
         
         // Constructor
