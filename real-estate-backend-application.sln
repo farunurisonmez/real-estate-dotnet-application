@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Entities", "Real
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Dal", "RealEstate.Dal\RealEstate.Dal.csproj", "{30AEC2D8-A9CB-4A4C-8130-D0C4A2B301EE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Bll", "RealEstate.Bll\RealEstate.Bll.csproj", "{7D356D37-2D8B-4EA9-B77F-FF86364272D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

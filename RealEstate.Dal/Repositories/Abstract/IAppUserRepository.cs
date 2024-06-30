@@ -5,6 +5,6 @@ using RealEstate.Entities.Models;
 
 namespace RealEstate.Dal.Repositories.Abstract {
     public interface IAppUserRepository:IRepository<AppUser> {
-        
+        Task<bool> AddUser(AppUser item);
     }
 }
