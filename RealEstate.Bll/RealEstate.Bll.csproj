@@ -5,5 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+ <ItemGroup>
+		<ProjectReference Include="..\RealEstate.Dal\RealEstate.Dal.csproj">
+			<PrivateAssets>All</PrivateAssets>
+		</ProjectReference>
+  </ItemGroup>
 </Project>
