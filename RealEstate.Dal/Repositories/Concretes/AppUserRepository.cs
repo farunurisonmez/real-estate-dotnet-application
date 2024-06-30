@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using RealEstate.Dal.Context;
 using RealEstate.Dal.Repositories.Abstract;
 using RealEstate.Entities.Models;
@@ -9,10 +10,18 @@ namespace RealEstate.Dal.Repositories.Concretes {
     //</summary>
     public class AppUserRepository : BaseRepository<AppUser>, IAppUserRepository
     {
-      //Constructor metodu ile DbContext tipinde bir parametre alır ve bu parametreyi BaseRepository sınıfının constructor metoduna gönderir.
-      public AppUserRepository(DbContext context) : base(context)
-      {
+      UserManager<AppUser> _userManager;
 
+      //Constructor metodu ile DbContext tipinde bir parametre alır ve bu parametreyi BaseRepository sınıfının constructor metoduna gönderir.
+      public AppUserRepository(DbContext context, UserManager<AppUser> userManager) : base(context)
+      {
+        _userManager = userManager;
+      }
+
+      public async Task<bool> AddUser(AppUser item) {
+        IdentityResult result = await _userManager.CreateAsync(item, item.PasswordHash);
+        if(result.Succeeded) return true;
+        return false;
       }
     }
 }
