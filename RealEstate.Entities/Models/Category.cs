@@ -7,7 +7,5 @@
 
         //Relational Properties
         public virtual List<Advert> Adverts { get; set; }
-
-
     }
 }

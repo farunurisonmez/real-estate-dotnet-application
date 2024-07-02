@@ -1,4 +1,4 @@
-﻿using RealEstate.Entities.Enums;
+using RealEstate.Entities.Enums;
 using RealEstate.Entities.Interfaces;
 
 namespace RealEstate.Entities.Models
