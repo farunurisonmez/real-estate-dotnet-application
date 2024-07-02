@@ -1,12 +1,7 @@
 ﻿using RealEstate.Bll.ManagerServices.Abstracts;
 using RealEstate.Dal.Repositories.Abstracts;
 using RealEstate.Entities.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RealEstate.Bll.ManagerServices.Concretes
 {

@@ -1,19 +1,21 @@
 using Microsoft.AspNetCore.Identity;
 using RealEstate.Entities.Enums;
 using RealEstate.Entities.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RealEstate.Entities.Models
 {
+    /// <summary>
+    // AppUser sınıfı, IdentityUser sınıfını kalıtım alır ve IEntity arayüzünü uygular.
+    // Bu sınıf uygulama kullanıcılarını temsil eder.
+    /// </summary>
     public class AppUser : IdentityUser<int>, IEntity
     {
+        // Varsayılan yapıcı metot. Kullanıcı oluşturulduğunda başlangıç değerlerini atar.
         public AppUser()
         {
-            CreatedDate = DateTime.Now;
+            // Kullanıcı oluşturulduğunda CreatedDate'yi o anki zamana ayarlar.
+            CreatedDate = DateTime.UtcNow;
+            // Kullanıcı oluşturulduğunda Status'u Inserted olarak ayarlar.
             Status = DataStatus.Inserted;
         }
         public int ID { get; set; }
@@ -22,7 +24,7 @@ namespace RealEstate.Entities.Models
         public DateTime? DeletedDate { get; set; }
         public DataStatus Status { get; set; }
 
-        //Relational Properties
+        // İlişkisel özellik: Kullanıcının profili
         public virtual AppUserProfile Profile { get; set; }
     }
 }

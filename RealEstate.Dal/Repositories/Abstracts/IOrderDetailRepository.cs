@@ -9,5 +9,6 @@ namespace RealEstate.Dal.Repositories.Abstracts
 {
     public interface IAdvertDetailRepository:IRepository<AdvertDetail>
     {
+        //IRepostory'den gelen metotlar dışında özel metotlarımız olacak.
     }
 }

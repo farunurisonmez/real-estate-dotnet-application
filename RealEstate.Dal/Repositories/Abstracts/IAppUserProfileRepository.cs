@@ -9,5 +9,6 @@ namespace RealEstate.Dal.Repositories.Abstracts
 {
     public interface IAppUserProfileRepository:IRepository<AppUserProfile>
     {
+        //IRepostory'den gelen metotlar dışında özel metotlarımız olacak.
     }
 }
