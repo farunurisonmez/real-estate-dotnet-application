@@ -28,6 +28,7 @@ namespace RealEstate.WebAPI.Controllers
             };
 
             bool result = await _appUserManager.CreateUserAsync(appUser);
+            
             if (result)
             {
                 return Ok("Kullanıcı ekleme basarılı");

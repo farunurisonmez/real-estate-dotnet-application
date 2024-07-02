@@ -11,49 +11,79 @@ using System.Threading.Tasks;
 
 namespace RealEstate.Dal.Repositories.Concretes
 {
+    /// <summary>
+    /// BaseRepository sınıfı IRepository arayüzünden türetilmiştir.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BaseRepository<T> : IRepository<T> where T : class, IEntity
     {
         CustomContext _db;
+
+        /// <summary>
+        /// Constructor injection
+        /// </summary>
+        /// <param name="db"></param>
         public BaseRepository(CustomContext db)
         {
             _db = db;
         }
+
+        /// <summary>
+        /// Veritabanına veri ekler.
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(T item)
         {
             _db.Set<T>().Add(item);
             _db.SaveChanges();
         }
 
-
-
+        /// <summary>
+        /// Veritabanına asenkron olarak veri ekler.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public async Task AddAsync(T item)
         {
             await _db.Set<T>().AddAsync(item);
             await _db.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Veritabanına list tipinde veri ekler.
+        /// </summary>
+        /// <param name="list"></param>
         public void AddRange(List<T> list)
         {
             _db.Set<T>().AddRange();
             _db.SaveChanges();
         }
 
+        /// <summary>
+        /// Veritabanına list tipinde veri ekler.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public async Task AddRangeAsync(List<T> list)
         {
             await _db.Set<T>().AddRangeAsync();
             await _db.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Verinin olup olmadıgını kontrol eder.
+        /// </summary>
+        /// <param name="exp"></param>
+        /// <returns></returns>
         public async Task<bool> AnyAsync(Expression<Func<T, bool>> exp)
         {
             return await _db.Set<T>().AnyAsync(exp);
         }
 
         /// <summary>
-        /// Verinin pasife cekilmesidir
+        /// Verinin pasife çekılmesı
         /// </summary>
         /// <param name="item"></param>
-        /// <exception cref="NotImplementedException"></exception>
         public void Delete(T item)
         {
             item.Status = Entities.Enums.DataStatus.Deleted;
@@ -114,7 +144,12 @@ namespace RealEstate.Dal.Repositories.Concretes
             return _db.Set<T>().Select(exp);
         }
 
-        public async  Task Update(T item)
+        /// <summary>
+        /// Güncelleme işlemi yapar.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public async Task Update(T item)
         {
             item.Status = Entities.Enums.DataStatus.Updated;
             item.ModifiedDate = DateTime.Now;
@@ -128,11 +163,20 @@ namespace RealEstate.Dal.Repositories.Concretes
             foreach (T item in list) await Update(item);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="exp"></param>
+        /// <returns></returns>
         public IQueryable<T> Where(Expression<Func<T, bool>> exp)
         {
            return _db.Set<T>().Where(exp);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
         void IRepository<T>.Add(T item)
         {
             _db.Set<T>().Add(item);

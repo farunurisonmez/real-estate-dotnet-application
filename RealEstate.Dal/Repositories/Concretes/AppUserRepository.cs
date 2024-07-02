@@ -26,15 +26,8 @@ namespace RealEstate.Dal.Repositories.Concretes
             IdentityResult result = await _userManager.CreateAsync(item, item.PasswordHash);
             
             if (result.Succeeded) return true;
-            //List<IdentityError> errors = new List<IdentityError>();
-            //foreach (IdentityError error in result.Errors)
-            //{
-            //    errors.Add(error);
-            //}
             return false;
-
         }
-
 
     }
 }
