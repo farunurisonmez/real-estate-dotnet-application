@@ -29,6 +29,7 @@ builder.Services.AddSession(x =>
 }); 
 
 
+
 WebApplication app = builder.Build();
 
 //Development ortamında Swagger'ı kullanmak için ekledik.
@@ -38,6 +39,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseRouting(); // Routing middleware'ini ekledik.
+
+// CORS politikasını kullanın
+app.UseCors("RealEstateClient");
 
 app.UseAuthorization(); //Yetkilendirme işlemleri için ekledik.
 

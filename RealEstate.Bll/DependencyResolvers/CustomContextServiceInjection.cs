@@ -21,6 +21,15 @@ namespace RealEstate.Bll.DependencyResolvers
             IConfiguration configuration = provider.GetService<IConfiguration>();
 
             services.AddDbContextPool<CustomContext>(options => options.UseNpgsql(configuration.GetConnectionString("MyConnection")).UseLazyLoadingProxies());
+            services.AddCors(options =>
+            {
+                options.AddPolicy("RealEstateClient", builder => {
+                    builder.WithOrigins("http://localhost:3000");
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyMethod();
+                    builder.AllowCredentials();
+                });
+            });
             return services;
         }
     }
