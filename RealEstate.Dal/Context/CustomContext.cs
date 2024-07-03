@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using RealEstate.Dal.Configurations;
 using RealEstate.Entities.Models;
 
-
 namespace RealEstate.Dal.Context
 {
     /// <summary>
