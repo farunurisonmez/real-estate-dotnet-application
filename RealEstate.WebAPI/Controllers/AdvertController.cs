@@ -18,6 +18,21 @@ namespace RealEstate.WebAPI.Controllers
             _advertManager = advertManager;
         }
 
+         [HttpPost]
+        public async Task<IActionResult> CreateAdvert(CreateAdvertRequestModel item)
+        {
+            Advert p = new()
+            {
+                AdvertName = item.AdvertName,
+                UnitPrice = item.UnitPrice,
+                CategoryID = item.CategoryID
+            };
+
+            string result = _advertManager.Add(p);
+            return Ok(result);
+        }
+
+
         [HttpGet]
         public async Task<IActionResult> GetAdverts(int? categoryID, string? search)
         {
