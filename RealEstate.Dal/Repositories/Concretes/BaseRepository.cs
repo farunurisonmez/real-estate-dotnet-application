@@ -153,7 +153,7 @@ namespace RealEstate.Dal.Repositories.Concretes
         {
             item.Status = Entities.Enums.DataStatus.Updated;
             item.ModifiedDate = DateTime.Now;
-            T original =await FindAsync(item.ID);
+            T original =await FindAsync(item.Id);
             _db.Entry(original).CurrentValues.SetValues(item);
             await _db.SaveChangesAsync();
         }

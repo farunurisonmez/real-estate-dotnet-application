@@ -38,7 +38,7 @@ namespace RealEstate.WebAPI.Controllers
             {
                 Name = x.Name,
                 Description = x.Description,
-                CategoryID = x.ID
+                CategoryId = x.Id
             }).ToList();
 
             return Ok(categories);

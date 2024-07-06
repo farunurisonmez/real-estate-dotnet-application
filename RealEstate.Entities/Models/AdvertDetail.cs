@@ -2,7 +2,7 @@
 {
     public class AdvertDetail:BaseEntity
     {
-        public int AdvertID { get; set; }
+        public int AdvertId { get; set; }
 
         //Relational Properties
         public virtual Advert Advert { get; set; }

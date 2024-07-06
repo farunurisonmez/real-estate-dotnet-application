@@ -45,7 +45,7 @@ Bu mimari, kodun modülerliğini, sürdürülebilirliğini ve test edilebilirli�
 
 ### Yeni Migration Oluşturma:
 
-`dotnet ef database update ApplicationDbInitial --output-dir Migrations --project RealEstate.Dal.csproj --context CustomContext --startup-project ../RealEstate.WebAPI/RealEstate.WebAPI.csproj -v`
+`dotnet ef migrations add ApplicationDbInitial --output-dir Migrations --project RealEstate.Dal.csproj --context CustomContext --startup-project ../RealEstate.WebAPI/RealEstate.WebAPI.csproj -v`
 
 ### Özet Veritabanını Güncelleme:
 **Oluşturduğunuz migration'ı veritabanına uygulamak için:**

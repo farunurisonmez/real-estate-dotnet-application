@@ -31,7 +31,7 @@ namespace RealEstate.Dal.Context
 
             // AdvertDetail için birincil anahtar yapılandırması
             builder.Entity<AdvertDetail>()
-            .HasKey(e => e.ID);
+            .HasKey(e => e.Id);
 
         }
 
@@ -41,6 +41,6 @@ namespace RealEstate.Dal.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Advert> Adverts { get; set; }
         public DbSet<AdvertDetail> AdvertDetails { get; set; }
-
+        
     }
 }

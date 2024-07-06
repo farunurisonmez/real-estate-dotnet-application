@@ -4,7 +4,7 @@ namespace RealEstate.Entities.Interfaces
 {
     public interface IEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         // Varlığın oluşturulma tarihini alır veya ayarlar.
         public DateTime CreatedDate { get; set; }
         //Varlığın son değiştirilme tarihini alır veya ayarlar.

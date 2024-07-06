@@ -4,7 +4,7 @@
     {
         public string AdvertName { get; set; }
         public decimal UnitPrice { get; set; }
-        public int? CategoryID { get; set; }
+        public int? CategoryId { get; set; }
 
 
         //Relational Properties

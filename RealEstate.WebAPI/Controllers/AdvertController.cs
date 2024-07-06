@@ -25,7 +25,7 @@ namespace RealEstate.WebAPI.Controllers
             {
                 AdvertName = item.AdvertName,
                 UnitPrice = item.UnitPrice,
-                CategoryID = item.CategoryID
+                CategoryId = item.CategoryId
             };
 
             string result = _advertManager.Add(p);
@@ -34,73 +34,17 @@ namespace RealEstate.WebAPI.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAdverts(int? categoryID, string? search)
+        public async Task<IActionResult> GetAdverts(int? categoryId, string? search)
         {
-            List<AdvertResponseModel> adverts;
-
-            if (categoryID.HasValue)
-            {
-                if (!string.IsNullOrEmpty(search))
-                {
-                    adverts = _advertManager
-                        .Where(x => x.CategoryID == categoryID &&
-                                    (x.AdvertName.Contains(search) ||
-                                     x.Category.Name.Contains(search)))
-                        .Select(x => new AdvertResponseModel
-                        {
-                            ID = x.ID,
-                            AdvertName = x.AdvertName,
-                            UnitPrice = x.UnitPrice,
-                            Name = x.Category.Name
-                        })
-                        .ToList();
-                }
-                else
-                {
-                    adverts = _advertManager
-                        .Where(x => x.CategoryID == categoryID)
-                        .Select(x => new AdvertResponseModel
-                        {
-                            ID = x.ID,
-                            AdvertName = x.AdvertName,
-                            UnitPrice = x.UnitPrice,
-                            Name = x.Category.Name
-                        })
-                        .ToList();
-                }
-            }
-            else
-            {
-                if (!string.IsNullOrEmpty(search))
-                {
-                    adverts = _advertManager
-                        .Where(x => x.AdvertName.Contains(search) ||
-                                    x.Category.Name.Contains(search))
-                        .Select(x => new AdvertResponseModel
-                        {
-                            ID = x.ID,
-                            AdvertName = x.AdvertName,
-                            UnitPrice = x.UnitPrice,
-                            Name = x.Category.Name
-                        })
-                        .ToList();
-                }
-                else
-                {
-                    adverts = _advertManager
-                        .Select(x => new AdvertResponseModel
-                        {
-                            ID = x.ID,
-                            AdvertName = x.AdvertName,
-                            UnitPrice = x.UnitPrice,
-                            Name = x.Category.Name
-                        })
-                        .ToList();
-                }
-            }
+            var adverts = _advertManager.GetAdverts(categoryId, search)
+            .Select(advert => new AdvertResponseModel {
+                Id = advert.Id,
+                AdvertName = advert.AdvertName,
+                UnitPrice = advert.UnitPrice,
+                Name = advert.Category.Name
+            }).ToList();
 
             return Ok(adverts);
         }
-
     }
 }

@@ -8,8 +8,12 @@ namespace RealEstate.Dal.Configurations
         public override void Configure(EntityTypeBuilder<AppUser> builder)
         {
             base.Configure(builder);
-            builder.Ignore(x => x.ID);
-            builder.HasOne(x => x.Profile).WithOne(x => x.AppUser).HasForeignKey<AppUserProfile>(x => x.ID);
+
+
+            builder.HasKey(user => user.Id);
+            builder.HasOne(user => user.Profile)
+            .WithOne(user => user.AppUser)
+            .HasForeignKey<AppUserProfile>(user => user.Id);
         }
     }
 }

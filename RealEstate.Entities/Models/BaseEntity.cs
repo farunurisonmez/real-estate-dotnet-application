@@ -10,7 +10,7 @@ namespace RealEstate.Entities.Models
             CreatedDate = DateTime.UtcNow; // Use UTC time
             Status = DataStatus.Inserted;
         }
-        public int ID { get; set; }
+        public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public DateTime? DeletedDate { get; set; }
